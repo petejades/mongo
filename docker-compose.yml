@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  mongo-dev:
+    image: mongo:4.2.6
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=lahnejj47jdh!#
+      - MONGO_INITDB_DATABASE=master
+    ports:
+    - target: 27017
+      published: 53221  # for mongo admin access
+      protocol: tcp
+    volumes:
+      - /srv/docker/mongo/data:/data/db
